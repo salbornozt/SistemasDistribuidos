@@ -9,11 +9,16 @@ from rest_framework.response import Response
 from rest_framework import status
 from django.http import HttpResponse
 
+from django.shortcuts import render
+
 
 # Create your views here.
 
 def index(request):
-    return HttpResponse("Hello world")
+    usuarios = User.objects.all()
+
+    return render(request, "app/index.html", {"users":usuarios})
+
 
 @api_view(['GET', 'POST'])
 def user_list(request):
