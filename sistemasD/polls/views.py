@@ -15,7 +15,7 @@ def index(request):
 def delete(request, id):
     x = requests.delete('http://127.0.0.1:8000/user/' + id)
 
-    return redirect("/app/")
+    return redirect("/app/index/")
 
 
 def actualizar(request, id):
